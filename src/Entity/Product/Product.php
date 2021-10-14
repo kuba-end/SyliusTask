@@ -9,17 +9,19 @@ use Sylius\Component\Core\Model\Product as BaseProduct;
 use Sylius\Component\Product\Model\ProductTranslationInterface;
 
 
-class Product extends BaseProduct
+class Product extends BaseProduct implements ProductInterface
 {
-    private  $color;
 
+    private ?string $color;
+
+    /** @var string[]  */
     public const COLORS= [
-        'Czerwony' => 'Czerwony',
-        'Zielony'=> 'Zielony',
-        'Niebieski' => 'Niebieski',
+        'Red' => 'Red',
+        'Green'=> 'Green',
+        'Blue' => 'Blue',
         ];
 
-    public function getColor()
+    public function getColor(): ?string
     {
         return $this->color;
     }

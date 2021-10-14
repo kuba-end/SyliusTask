@@ -1,14 +1,16 @@
 <div class="ui bottom attached tab segment active" data-tab="details">
+
     <table class="ui definition table">
         <tbody>
-        <tr>
-            {% if NULL != product.color %}
-                <td class="sylius-product-attribute-name">Color</td>
+            <tr>
+                {% if NULL != product.color %}
+                    <td class="sylius-product-attribute-name">Color</td>
 
-                <td> {{ product.color }} </td>
-            {% endif %}
-        </tr>
+                    <td> {{ product.color }} </td>
+                {% endif %}
+            </tr>
         </tbody>
     </table>
+
     {{ sylius_template_event('sylius.shop.product.show.tab_details', _context) }}
 </div>
