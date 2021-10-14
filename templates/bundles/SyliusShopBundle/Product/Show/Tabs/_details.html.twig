@@ -2,9 +2,11 @@
     <table class="ui definition table">
         <tbody>
         <tr>
-            <td class="sylius-product-attribute-name">Color</td>
+            {% if NULL != product.color %}
+                <td class="sylius-product-attribute-name">Color</td>
 
-            <td> {{ product.color }} </td>
+                <td> {{ product.color }} </td>
+            {% endif %}
         </tr>
         </tbody>
     </table>
