@@ -11,7 +11,7 @@ use Sylius\Component\Product\Model\ProductTranslationInterface;
 
 class Product extends BaseProduct
 {
-    private $color;
+    private string $color;
 
     public const COLORS= [
         'Czerwony' => 'Czerwony',
@@ -19,7 +19,7 @@ class Product extends BaseProduct
         'Niebieski' => 'Niebieski',
         ];
 
-    public function getColor()
+    public function getColor(): string
     {
         return $this->color;
     }
