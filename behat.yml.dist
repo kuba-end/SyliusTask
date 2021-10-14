@@ -2,6 +2,9 @@ imports:
     - vendor/sylius/sylius/src/Sylius/Behat/Resources/config/suites.yml
 
 default:
+    suites:
+        paths:
+            - "features"
     formatters:
         pretty:
             verbose: true
@@ -17,36 +20,14 @@ default:
             screenshot: true
 
         Behat\MinkExtension:
-            files_path: "%paths.base%/vendor/sylius/sylius/src/Sylius/Behat/Resources/fixtures/"
-            base_url: "https://localhost:8080/"
-            default_session: symfony
-            javascript_session: chrome_headless
-            sessions:
-                symfony:
-                    symfony: ~
-                chrome_headless:
-                    chrome:
-                        api_url: http://127.0.0.1:9222
-                        validate_certificate: false
-                chrome:
-                    selenium2:
-                        browser: chrome
-                        capabilities:
-                            browserName: chrome
-                            browser: chrome
-                            version: ""
-                            marionette: null # https://github.com/Behat/MinkExtension/pull/311
-                            chrome:
-                                switches:
-                                    - "start-fullscreen"
-                                    - "start-maximized"
-                                    - "no-sandbox"
-                            extra_capabilities:
-                                unexpectedAlertBehaviour: accept
-                firefox:
-                    selenium2:
-                        browser: firefox
-            show_auto: false
+                        # adapt this to whatever the real URL is to your local site
+                        base_url: https://localhost:8001/
+                        # or use "goutte"
+                        default_session: symfony
+                        javascript_session: selenium2
+                        browser_name: chrome
+                        symfony: ~
+                        selenium2: ~
 
         FriendsOfBehat\SymfonyExtension: ~
 
@@ -54,7 +35,6 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "vendor/sylius/sylius/features"
                 - "features"
 
     gherkin:
