@@ -1,6 +1,6 @@
 # Sylius task by BitBagAcademy
 ### Task:
-Zainstaluj (...) w widoku produktu na stronie sklepu. 
+Exam task for Bitbag comapny.
 
 ## What for
 
